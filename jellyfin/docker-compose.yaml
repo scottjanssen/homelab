@@ -1,0 +1,25 @@
+version: "3.0"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    ports:
+      - 8096:8096
+      # Optional ports for specific features if needed
+      # - 8920:8920 # HTTPS port
+      # - 7359:7359/udp # DLNA
+      # - 1900:1900/udp # DLNA
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /mnt/media/movies:/data/movies:ro
+      - /mnt/media/tv:/data/tvshows:ro
+      # Use /dev/shm for faster transcoding if desired
+      # - /dev/shm:/dev/shm
+    environment:
+      - TZ=Etc/UTC
+      - PUID=1000 
+      - PGID=1000
+      # Optional: specify published server URL if using a reverse proxy
+      # - JELLYFIN_PublishedServerUrl=http://your.domain.com
