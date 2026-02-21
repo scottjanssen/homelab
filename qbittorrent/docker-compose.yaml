@@ -3,6 +3,7 @@ services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
+    user: "1000:1000"
     network_mode: "container:gluetun"
     environment:
       - PUID=1000
