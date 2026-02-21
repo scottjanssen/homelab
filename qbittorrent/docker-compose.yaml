@@ -17,7 +17,7 @@ services:
       - VPN_ENABLED=true 
       - VPN_CONF=wg0 
       - VPN_PROVIDER=pia 
-      - VPN_LAN_NETWORK=192.168.1.0/24 
+      - VPN_LAN_NETWORK=192.168.8.0/24 
       - PRIVOXY_ENABLED=true
       - VPN_PIA_PREFERRED_REGION=Mexico
     cap_add:
