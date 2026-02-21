@@ -11,5 +11,5 @@ services:
     environment:
       - VPN_SERVICE_PROVIDER=private internet access
       - OPENVPN_USER=${PIA_USERNAME}
-      - OPENVPN_PASSWORD=#${PIA_PASSWORD}
+      - OPENVPN_PASSWORD=${PIA_PASSWORD}
       - SERVER_REGIONS=Mexico
