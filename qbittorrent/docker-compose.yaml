@@ -9,7 +9,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - WEBUI_PORTS=8097
+      - WEBUI_PORTS=8097/tcp
       - UMASK=002
       - LIBTORRENT=v1
       - VPN_PIA_USER=${PIA_USERNAME}
