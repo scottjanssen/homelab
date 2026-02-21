@@ -12,5 +12,5 @@ services:
       - 8098:8080
 
 volumes:
-  data: ./data
-  keys: ./keys
+  data: 
+  keys:
