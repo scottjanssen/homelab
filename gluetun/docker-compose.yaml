@@ -21,6 +21,6 @@ services:
       - FIREWALL_INPUT_PORTS=8097
     ports:
       #All for Qbittorrent
-      - 8097:8080
+      - 8097:8097
       - 6881:6881
       - 6881:6881/udp
