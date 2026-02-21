@@ -12,5 +12,5 @@ services:
       - TORRENTING_PORT=6881
     volumes:
       - ./config:/config
-      - /mnt/media/downloads:/data/downloads
+      - /mnt/media:/data
     restart: unless-stopped
