@@ -17,7 +17,7 @@ services:
       - VPN_PROVIDER=pia 
       - VPN_LAN_NETWORK=192.168.8.0/24 
       - PRIVOXY_ENABLED=true
-      - VPN_PIA_PREFERRED_REGION=Mexico
+      - VPN_PIA_PREFERRED_REGION=mexico
     cap_add:
       - NET_ADMIN
     volumes:
