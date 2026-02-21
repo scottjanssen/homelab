@@ -1,4 +1,5 @@
-transmission:
+services:
+  transmission:
     image: haugene/transmission-openvpn
     container_name: transmission
     volumes:
