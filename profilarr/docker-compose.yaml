@@ -1,0 +1,14 @@
+services:
+    profilarr:
+      image: santiagosayshey/profilarr:latest # or :beta
+      container_name: profilarr
+      ports:
+        - "6868:6868"
+      volumes:
+        - ./config:/config
+      environment:
+        - PUID=1000 # Set to your user ID
+        - PGID=1000 # Set to your group ID
+        - UMASK=022 # Optional, defaults to 022
+        - TZ=Etc/UTC # Set your timezone
+      restart: unless-stopped
