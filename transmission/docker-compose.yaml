@@ -1,0 +1,36 @@
+transmission:
+    image: haugene/transmission-openvpn
+    container_name: transmission
+    volumes:
+        - ./config/transmission:/config
+        - /mnt/media:/data
+    environment:
+        - PUID=1000
+        - PGID=1000
+        - CREATE_TUN_DEVICE=true
+        - OPENVPN_PROVIDER=PIA
+        - OPENVPN_CONFIG=ca_montreal
+        - OPENVPN_USERNAME=${PIA_USERNAME}
+        - OPENVPN_PASSWORD=${PIA_PASSWORD}
+        - WEBPROXY_ENABLED=true
+        - WEBPROXY_PORT=8118
+        - TRANSMISSION_DOWNLOAD_DIR=/data/downloads
+        - TRANSMISSION_IDLE_SEEDING_LIMIT_ENABLED=true
+        - TRANSMISSION_SEED_QUEUE_ENABLED=true
+        - TRANSMISSION_INCOMPLETE_DIR_ENABLED=false
+        - LOCAL_NETWORK=192.168.8.0/24
+        - HEALTH_CHECK_HOST=github.com
+    cap_add:
+        - NET_ADMIN
+    logging:
+        driver: json-file
+        options:
+            max-size: 10m
+    dns:
+        - 8.8.8.8
+        - 8.8.4.4
+  #may not need this dns section
+    ports:
+        - 8118:8118
+        - 9091:9091
+    restart: unless-stopped
