@@ -9,10 +9,7 @@ services:
     volumes:
       - ./gluetun:/gluetun
     container_name: gluetun
-    user: "1000:1000"
     environment:
-      - PUID=1000
-      - PGID=1000
       - VPN_SERVICE_PROVIDER=private internet access
       - OPENVPN_USER=${PIA_USERNAME}
       - OPENVPN_PASSWORD=${PIA_PASSWORD}

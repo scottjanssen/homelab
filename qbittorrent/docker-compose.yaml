@@ -3,7 +3,6 @@ services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
-    user: "1000:1000"
     network_mode: "container:gluetun"
     environment:
       - PUID=1000
@@ -11,6 +10,10 @@ services:
       - TZ=Etc/UTC
       - WEBUI_PORT=8097
       - TORRENTING_PORT=6881
+    cap_add:
+      - SETUID
+      - SETGID
+      - CHOWN
     volumes:
       - ./config:/config
       - /mnt/media:/data
