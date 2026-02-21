@@ -14,6 +14,10 @@ services:
       - OPENVPN_PASSWORD=${PIA_PASSWORD}
       - VPN_TYPE=openvpn
       - SERVER_REGIONS=Mexico
+      # REQUIRED: allow inbound ports through gluetun firewall
+      - FIREWALL_VPN_INPUT_PORTS=6881,8097
+      # optional but recommended
+      - FIREWALL_INPUT_PORTS=8097
     ports:
       #All for Qbittorrent
       - 8097:8080
