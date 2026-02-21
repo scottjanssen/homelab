@@ -12,4 +12,10 @@ services:
       - VPN_SERVICE_PROVIDER=private internet access
       - OPENVPN_USER=${PIA_USERNAME}
       - OPENVPN_PASSWORD=${PIA_PASSWORD}
+      - VPN_TYPE=openvpn
       - SERVER_REGIONS=Mexico
+    ports:
+      #All for Qbittorrent
+      - 8097:8080
+      - 6881:6881
+      - 6881:6881/udp
