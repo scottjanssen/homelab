@@ -3,8 +3,6 @@ services:
   qbittorrent:
     image: ghcr.io/hotio/qbittorrent
     container_name: qbittorrent
-    ports:
-      - 8097:8080
     environment:
       - PUID=1000
       - PGID=1000
