@@ -12,7 +12,7 @@ services:
       - LIBTORRENT=v1
       - VPN_PIA_USER=${PIA_USERNAME}
       - VPN_PIA_PASS=${PIA_PASSWORD}
-      - VPN_ENABLED=true 
+      - VPN_ENABLED=true
       - VPN_CONF=wg0 
       - VPN_PROVIDER=pia 
       - VPN_LAN_NETWORK=192.168.8.0/24 
@@ -20,6 +20,7 @@ services:
       - VPN_PIA_PREFERRED_REGION=mexico
     cap_add:
       - NET_ADMIN
+      - SYS_MODULE
     volumes:
       - ./config:/config
       - /mnt/media:/data
