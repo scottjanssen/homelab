@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    image: ghcr.io/hargata/lubelogger:latest
+    restart: unless-stopped
+    # volumes used to keep data persistent
+    volumes:
+      - data:/App/data
+      - keys:/root/.aspnet/DataProtection-Keys
+    # expose port and/or use serving via traefik
+    ports:
+      - 8098:8080
+
+volumes:
+  data: ./data
+  keys: ./keys

@@ -13,7 +13,7 @@ services:
     volumes:
       - ./config:/config
     ports:
-      - 8097:8097
+      - 8097:8080
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
