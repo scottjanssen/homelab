@@ -8,6 +8,7 @@ services:
       - /dev/net/tun:/dev/net/tun
     volumes:
       - ./gluetun:/gluetun
+    container_name: gluetun
     environment:
       - VPN_SERVICE_PROVIDER=private internet access
       - OPENVPN_USER=${PIA_USERNAME}
