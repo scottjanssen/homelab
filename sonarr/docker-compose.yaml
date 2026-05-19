@@ -13,3 +13,9 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
+    networks:
+      - proxy-tier
+
+networks:
+  proxy-tier:
+    external: true

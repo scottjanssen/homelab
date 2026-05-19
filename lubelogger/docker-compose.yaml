@@ -11,7 +11,13 @@ services:
     # expose port and/or use serving via traefik
     ports:
       - 8098:8080
+    networks:
+      - proxy-tier
 
 volumes:
   data: 
   keys:
+
+networks:
+  proxy-tier:
+    external: true

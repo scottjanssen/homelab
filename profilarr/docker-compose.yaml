@@ -12,3 +12,9 @@ services:
         - UMASK=022 # Optional, defaults to 022
         - TZ=Etc/UTC # Set your timezone
       restart: unless-stopped
+      networks:
+      - proxy-tier
+
+networks:
+  proxy-tier:
+    external: true

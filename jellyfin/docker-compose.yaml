@@ -23,3 +23,9 @@ services:
       - PGID=1000
       # Optional: specify published server URL if using a reverse proxy
       # - JELLYFIN_PublishedServerUrl=http://your.domain.com
+    networks:
+      - proxy-tier
+
+networks:
+  proxy-tier:
+    external: true

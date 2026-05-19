@@ -13,3 +13,9 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
+    networks:
+      - proxy-tier
+
+networks:
+  proxy-tier:
+    external: true
